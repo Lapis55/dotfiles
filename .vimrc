@@ -59,3 +59,29 @@ nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 "unable C-Z and replace as undo
 inoremap <C-Z>	<Esc>ui		
 nnoremap <C-Z>	u
+
+""
+"" Vim-LaTeX
+""
+"filetype plugin on		" change plugin as filetype
+"filetype indent on		" change indent as filetype
+"set shellbash			" change division of path from \ to /
+"set grepprg=grep\ -nH\ *	" searching command
+"let g:tex_flavor='latex'	" g ... global
+"let g:Imap_UsePlaceHolders = 1
+"let g:Imap_DeleteEmptyPlaceHolders = 1
+"let g:Imap_StickyPlaceHolders = 0
+"let g:Tex_DefaultTargetFormat = 'pdf'
+"let g:Tex_MultipleCompileFormats = 'dvi,pdf'
+
+"let g:Tex_FormatDependency_pdf = 'dvi,pdf'
+
+"let g:Tex_FormatDependency_ps = 'dvi,ps'
+"let g:Tex_CompoleRule_pdf = 'ptex2pdf -u -l -ot "-kanji=utf8 -no-guess-input-enc -synctex=1 -interaction=nonstopmode -file-line-error-style" $*'
+
+"let g:Tex_CompileRule_ps = 'dvips -Posf -o $*.ps $*.dvi'
+"let g:Tex_CompileRule_dvi = 'uplatex -kanji=utf8 -no-guess-input-enc -synctex=1 -interaction=nonstopmode -file-line-error-style $*'
+"let g:BibtexFlavor = 'pbibtex %'
+"let g:Tex_MakeIndexFlavor = 'upmendex $*.idx'
+"let g:Tex_ViewRule_pdf = 'rundll32 shell32,ShellExec_RunDLL SumatraPDF -reuse-instance -inverse-search "\" ' . $VIM . '\gvim.exe\" -n -c \":RemoteOpen +\%l \%f_""'
+"let g:Tex_AutoFolding = 0
