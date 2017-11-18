@@ -71,6 +71,7 @@ packadd matchit
 
 
 "--- Added by mine ---"
+colorscheme molokai
 syntax on
 
 set noswapfile			" don't make swap file
