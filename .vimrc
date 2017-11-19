@@ -91,5 +91,21 @@ nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 inoremap <C-Z>	<Esc>ui		
 nnoremap <C-Z>	u
 
-let g:quickrun_config={}
+
+""
+"" Vim-LaTeX
+""
+" basic configuration
+filetype plugin on
+filetype indent on
+set shellslash
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+" place holder <++>
+let g:Imap_UsePlaceHolders = 1
+let g:Imap_DeleteEmptyPlaceHolders = 1
+let g:Imap_StickyPlaceHolders = 0
+" disable folding
+let g:Tex_Folding = 0
+let g:Tex_AutoFolding = 0
 
