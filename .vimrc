@@ -20,8 +20,16 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " list install or using plug-ins
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'lervag/vimtex'
-NeoBundle 'thinca/vim-quickrun'
+
+NeoBundle 'Shougo/vimproc.vim'
+NeoBundleLazy "thinca/vim-quickrun", {
+      \ 'depends': 'osyo-manga/shabadou.vim',
+      \ 'autoload': {
+      \   'mappings': [['nxo', '<Plug>(quickrun)']]
+      \ }}
+
+" tex‚Ìconceal‚ð–³Œø‰»
+let g:tex_conceal=''
 
 " exit NeoBundle config
 call neobundle#end()
@@ -93,4 +101,5 @@ nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 inoremap <C-Z>	<Esc>ui		
 nnoremap <C-Z>	u
 
+let g:quickrun_config={}
 
