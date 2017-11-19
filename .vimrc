@@ -95,22 +95,17 @@ nnoremap <C-Z>	u
 ""
 "" Vim-LaTeX
 ""
-
 " basic configuration
 filetype plugin on
 filetype indent on
 set shellslash
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
-
 " place holder <++>
 let g:Imap_UsePlaceHolders = 1
 let g:Imap_DeleteEmptyPlaceHolders = 1
 let g:Imap_StickyPlaceHolders = 0
-
-" view rule
-let g:Tex_ViewRule_pdf = 'rundll32 shell32,ShellExec_RunDLL SumatraPDF -reuse-instance -inverse-search "\"' . $VIM . '\vim.exe\" -n -c \":RemoteOpen +\%l \%f\""'
-
+" disable folding
 let g:Tex_Folding = 0
 let g:Tex_AutoFolding = 0
 
