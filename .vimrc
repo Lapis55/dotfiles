@@ -111,3 +111,6 @@ let g:Imap_StickyPlaceHolders = 0
 " view rule
 let g:Tex_ViewRule_pdf = 'rundll32 shell32,ShellExec_RunDLL SumatraPDF -reuse-instance -inverse-search "\"' . $VIM . '\vim.exe\" -n -c \":RemoteOpen +\%l \%f\""'
 
+let g:Tex_Folding = 0
+let g:Tex_AutoFolding = 0
+
