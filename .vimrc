@@ -110,8 +110,6 @@ nnoremap ｄｄ dd
 nnoremap ｙｙ yy
 
 
-
-
 ""
 "" Vim-LaTeX
 ""
