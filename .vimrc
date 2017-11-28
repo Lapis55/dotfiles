@@ -91,6 +91,26 @@ nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 inoremap <C-Z>	<Esc>ui		
 nnoremap <C-Z>	u
 
+"use arrow key as gj, gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+
+"enable move cursor at insert-mode
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
+"enable commands at IME
+nnoremap あ a
+nnoremap い i
+nnoremap う u
+nnoremap お p
+nnoremap ｄｄ dd
+nnoremap ｙｙ yy
+
+
+
 
 ""
 "" Vim-LaTeX
@@ -101,7 +121,7 @@ filetype indent on
 set shellslash
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
-" place holder <++>
+" place holder 
 let g:Imap_UsePlaceHolders = 1
 let g:Imap_DeleteEmptyPlaceHolders = 1
 let g:Imap_StickyPlaceHolders = 0
