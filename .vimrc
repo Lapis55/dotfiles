@@ -126,7 +126,7 @@ let g:Tex_AutoFolding = 0
 ""
 "" easymotion
 ""
-map <Leader> <Plug>(easymotion-prefix)
+"map <Leader> <Plug>(easymotion-prefix)
 let g:EasyMotion_do_mapping = 0 "disable default mapping
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
@@ -134,7 +134,8 @@ let g:EasyMotion_do_mapping = 0 "disable default mapping
 " or
 " `s{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
-nmap <Leader>s <Plug>(easymotion-overwin-f2)
+nmap s <Plug>(easymotion-overwin-f2)
+xmap s <Plug>(easymotion-bd-f2)
 
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
