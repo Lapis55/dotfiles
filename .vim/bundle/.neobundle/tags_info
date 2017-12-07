@@ -1,4 +1,6 @@
 neobundle.vim
-neocomplcache.vim
+neocomplcache
+neosnippet
+neosnippet-snippets
 unite.vim
 vim-easymotion
