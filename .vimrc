@@ -156,10 +156,18 @@ let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 " enable '_' completion
 let g:neocomplcache_enable_underbar_completion = 1
-" select with TAB
-imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
 
+" expand and jump
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
+" select with TAB
+imap <expr><TAB> pumvisible() ? "\<C-n>" :neosnippet#expandable_or_jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" decide with Enter
+inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
+" undo completion 
+inoremap <expr><C-l> neocomplcache#undo_completion()
+
+" user definition snippet
+let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/'
 
