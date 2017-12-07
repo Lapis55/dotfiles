@@ -20,7 +20,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " list install or using plug-ins
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'easymotion/vim-easymotion'
@@ -156,7 +156,10 @@ let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 " enable '_' completion
 let g:neocomplcache_enable_underbar_completion = 1
+" select with TAB
+imap <expr><TAB> pumvisible() ? "<C-n>" : neosnippet#jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "<TAB>"
 
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
