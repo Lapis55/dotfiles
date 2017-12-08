@@ -20,6 +20,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " list install or using plug-ins
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplcache.vim'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'easymotion/vim-easymotion'
 
 " exit NeoBundle config
 call neobundle#end()
@@ -84,12 +88,86 @@ set ignorecase			" when search c, don't distinguish C and c
 set smartcase			" when search C, distinguish C and c
 set title			" display title
 
-"clear highlight
+"clear highlight command
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
  
 "unable C-Z and replace as undo
 inoremap <C-Z>	<Esc>ui		
 nnoremap <C-Z>	u
 
-let g:quickrun_config={}
+"use arrow key as gj, gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+
+"enable commands at IME
+nnoremap あ a
+nnoremap い i
+nnoremap う u
+nnoremap お o
+nnoremap ｄｄ dd
+nnoremap ｙｙ yy
+
+
+""
+"" Vim-LaTeX
+""
+" basic configuration
+filetype plugin on
+filetype indent on
+set shellslash
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+" place holder 
+let g:Imap_UsePlaceHolders = 1
+let g:Imap_DeleteEmptyPlaceHolders = 1
+let g:Imap_StickyPlaceHolders = 0
+" disable folding
+let g:Tex_Folding = 0
+let g:Tex_AutoFolding = 0
+
+""
+"" easymotion
+""
+"map <Leader> <Plug>(easymotion-prefix)
+let g:EasyMotion_do_mapping = 0 "disable default mapping
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+" nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+xmap s <Plug>(easymotion-bd-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+
+""
+"" neo snippet
+""
+" use NeoComplCache
+let g:neocomplcache_enable_at_startup = 1
+" ignore (A,a) until parent char input
+let g:neocomplcache_enable_smart_case = 1
+" enable '_' completion
+let g:neocomplcache_enable_underbar_completion = 1
+
+" expand and jump
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+" select with TAB
+imap <expr><TAB> pumvisible() ? "\<C-n>" :neosnippet#expandable_or_jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" decide with Enter
+inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
+" undo completion 
+inoremap <expr><C-l> neocomplcache#undo_completion()
+
+" user definition snippet
+let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/'
 
