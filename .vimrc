@@ -92,8 +92,12 @@ set title			" display title
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
  
 "unable C-Z and replace as undo
-inoremap <C-Z>	<Esc>ui		
-nnoremap <C-Z>	u
+inoremap <C-Z> <Esc>ui		
+nnoremap <C-Z> u
+
+"unable C-S and replace as undo
+inoremap <C-s> <Esc>:w<CR>
+nnoremap <C-s> :w<CR>
 
 "use arrow key as gj, gk
 nnoremap <Down> gj
