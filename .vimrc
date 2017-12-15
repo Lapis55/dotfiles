@@ -24,15 +24,6 @@ NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'easymotion/vim-easymotion'
-" automatically update and build
-NeoBundle 'Shougo/vimproc', {
-	\ 'build' : {
-		\'windows' : 'make -f make_mingw32.mak',
-		\ 'cygwin' : 'make -f make_cygwin.mak',
-		\ 'mac' : 'make -f make_mac.mak',
-		\ 'unix' : 'make -f make_unix.mak',
-	\ },
-\ }
 
 " exit NeoBundle config
 call neobundle#end() 
