@@ -87,6 +87,7 @@ set showmatch			" show the pair ( )
 set ignorecase			" when search c, don't distinguish C and c
 set smartcase			" when search C, distinguish C and c
 set title			" display title
+set clipboard=unnamed,unnamedplus " sync with OS clip board
 
 "clear highlight command
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
@@ -167,6 +168,8 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 " select with TAB
 imap <expr><TAB> pumvisible() ? "\<C-n>" :neosnippet#expandable_or_jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" back with TAB
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" :neosnippet#expandable_or_jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "\<S-TAB>"
 " decide with Enter
 inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
 " undo completion 
