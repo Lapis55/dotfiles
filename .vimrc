@@ -130,6 +130,7 @@ let g:Imap_StickyPlaceHolders = 0
 let g:Tex_Folding = 0
 let g:Tex_AutoFolding = 0
 
+
 ""
 "" easymotion
 ""
