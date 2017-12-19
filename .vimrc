@@ -24,6 +24,15 @@ NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'easymotion/vim-easymotion'
+NeoBundle 'Shougo/vimproc.vim'
+NeoBundleLazy 'Shougo/vimshell', {
+  \ 'depends' : 'Shougo/vimproc',
+  \ 'autoload' : {
+  \   'commands' : [{ 'name' : 'VimShell', 'complete' : 'customlist,vimshell#complete'},
+  \                 'VimShellExecute', 'VimShellInteractive',
+  \                 'VimShellTerminal', 'VimShellPop'],
+  \   'mappings' : ['<Plug>(vimshell_switch)']
+  \ }}
 
 " exit NeoBundle config
 call neobundle#end() 
@@ -178,4 +187,10 @@ inoremap <expr><C-l> neocomplcache#undo_completion()
 
 " user definition snippet
 let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/'
+
+
+" vimshell {{{
+nmap <silent> vs :<C-u>VimShell<CR>
+nmap <silent> vp :<C-u>VimShellPop<CR>
+" }}}
 
