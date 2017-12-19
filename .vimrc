@@ -34,7 +34,6 @@ NeoBundleLazy 'Shougo/vimshell', {
   \   'mappings' : ['<Plug>(vimshell_switch)']
   \ }}
 
-
 " exit NeoBundle config
 call neobundle#end() 
 
@@ -194,3 +193,4 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/
 nmap <silent> vs :<C-u>VimShell<CR>
 nmap <silent> vp :<C-u>VimShellPop<CR>
 " }}}
+
