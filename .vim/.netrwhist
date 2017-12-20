@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/c/Users/Luminous_Cosmos/Document/.vim/bundle/neosnippet-snippets/snippets'
 let g:netrw_dirhist_2='/home/kosei/catkin_ws/src/passivity_short/src'
 let g:netrw_dirhist_3='/'
 let g:netrw_dirhist_4='/c/Users/kosei/.vim'
+let g:netrw_dirhist_5='/c/Users/Luminous_Cosmos/Document'
