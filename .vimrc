@@ -24,7 +24,7 @@ NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'easymotion/vim-easymotion'
-NeoBundle 'Shougo/vimproc.vim'
+NeoBundle 'Shougo/vimproc'
 NeoBundleLazy 'Shougo/vimshell', {
   \ 'depends' : 'Shougo/vimproc',
   \ 'autoload' : {
