@@ -19,11 +19,15 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " list install or using plug-ins
+"
 NeoBundle 'Shougo/unite.vim'
+" auto complete
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+" cursor jump
 NeoBundle 'easymotion/vim-easymotion'
+" asyncronous exe
 NeoBundle 'Shougo/vimproc', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
@@ -33,6 +37,7 @@ NeoBundle 'Shougo/vimproc', {
 \     'unix' : 'gmake',
 \    },
 \ }
+" shell on vim
 NeoBundleLazy 'Shougo/vimshell', {
   \ 'depends' : 'Shougo/vimproc',
   \ 'autoload' : {
@@ -41,6 +46,8 @@ NeoBundleLazy 'Shougo/vimshell', {
   \                 'VimShellTerminal', 'VimShellPop'],
   \   'mappings' : ['<Plug>(vimshell_switch)']
   \ }}
+" colorscheme
+NeoBundle 'Badacadabra/vim-archery'
 
 " exit NeoBundle config
 call neobundle#end() 
@@ -90,7 +97,8 @@ packadd matchit
 
 
 "--- Added by mine ---"
-colorscheme molokai
+set background=dark
+colorscheme archery
 syntax on
 
 set noswapfile			" don't make swap file
