@@ -3,6 +3,7 @@ neocomplcache.vim
 neosnippet
 neosnippet-snippets
 unite.vim
+vim-airline
 vim-archery
 vim-easymotion
 vimproc
