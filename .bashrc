@@ -148,7 +148,7 @@ alias cm='cd ~/catkin_ws && catkin_make'
 
 
 export EDITOR='vim'
-
+export PATH=$PATH:mingw32/bin
 
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'

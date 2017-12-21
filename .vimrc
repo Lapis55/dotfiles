@@ -49,7 +49,7 @@ NeoBundleLazy 'Shougo/vimshell', {
 " colorscheme
 NeoBundle 'Badacadabra/vim-archery'
 " status bar
-NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'itchyny/lightline'
 
 " exit NeoBundle config
 call neobundle#end() 
@@ -99,9 +99,16 @@ packadd matchit
 
 
 "--- Added by mine ---"
-set background=dark
-colorscheme archery
+"set background=dark
 syntax on
+set t_Co=256
+if has("win32unix")
+	colorscheme archery
+elseif has("win32")
+	" to avoid kaoriya color accident, no color
+elseif has("unix")
+	colorscheme archery
+endif
 
 set noswapfile			" don't make swap file
 set fenc=utf-8			" set unicode
@@ -157,7 +164,6 @@ let g:Imap_StickyPlaceHolders = 0
 let g:Tex_Folding = 0
 let g:Tex_AutoFolding = 0
 
-
 ""
 "" easymotion
 ""
@@ -211,4 +217,7 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/
 nmap <silent> vs :<C-u>VimShell<CR>
 nmap <silent> vp :<C-u>VimShellPop<CR>
 " }}}
+
+" show second bottom line
+set laststatus=2
 
