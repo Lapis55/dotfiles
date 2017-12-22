@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+﻿#!/usr/bin/perl
 $latex = 'platex -kanji=utf-8 -synctex=1 -interaction=nonstopmode %S';
 $bibtex = 'pbibtex %O %B';
 $dvipdf = 'dvipdfmx %S';

@@ -1,4 +1,4 @@
-# Aliases for MSYS2 bash
+﻿# Aliases for MSYS2 bash
 
 # 移動しやすく
 alias ..='cd ..'
