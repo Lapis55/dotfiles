@@ -149,6 +149,7 @@ alias cm='cd ~/catkin_ws && catkin_make'
 
 export EDITOR='vim'
 export PATH=$PATH:mingw32/bin
+export PYTHONPATH=$PYTHONPATH:$HOME/LeapSDK/lib/x86:$HOME/LeapSDK/lib
 
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
