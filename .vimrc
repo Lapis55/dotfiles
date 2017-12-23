@@ -48,8 +48,6 @@ NeoBundleLazy 'Shougo/vimshell', {
   \ }}
 " colorscheme
 NeoBundle 'Badacadabra/vim-archery'
-" status bar
-NeoBundle 'itchyny/lightline'
 
 " exit NeoBundle config
 call neobundle#end() 
