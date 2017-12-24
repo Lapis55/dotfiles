@@ -19,14 +19,17 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " list install or using plug-ins
-"
+" convenient
 NeoBundle 'Shougo/unite.vim'
+
 " auto complete
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+
 " cursor jump
 NeoBundle 'easymotion/vim-easymotion'
+
 " asyncronous exe
 NeoBundle 'Shougo/vimproc', {
 \ 'build' : {
@@ -37,6 +40,7 @@ NeoBundle 'Shougo/vimproc', {
 \     'unix' : 'gmake',
 \    },
 \ }
+
 " shell on vim
 NeoBundleLazy 'Shougo/vimshell', {
   \ 'depends' : 'Shougo/vimproc',
@@ -46,8 +50,45 @@ NeoBundleLazy 'Shougo/vimshell', {
   \                 'VimShellTerminal', 'VimShellPop'],
   \   'mappings' : ['<Plug>(vimshell_switch)']
   \ }}
+
 " colorscheme
 NeoBundle 'Badacadabra/vim-archery'
+
+" quickrun
+NeoBundleLazy 'thinca/vim-quickrun',{
+\	"autoload" : { 'filetypes' : ["c","cpp","rb","py","tex"]}
+\}
+" asyncronous exe, update output per 60[ms]
+" output window: bottom, if no output: window close
+let g:quickrun_config = {
+\ "_" : {
+\	"runner" : "vimproc",
+\	"runner/vimproc/updatetime" : 60,
+\       "outputter/buffer/split" : ":botright",
+\       "outputter/buffer/close_on_empty" : 1
+\	},
+\ "tex" : {
+\	"command" : "latexmk",
+\	"outputter" : "error",
+\	"outputter/error/success" : "null",
+\	"outputter/error/error" : "quickfix",
+\	"srcfile" : expand("%"),
+\	"cmdopt": "-pvc",
+\	"hook/sweep/files" : [
+\                      '%S:p:r.aux',
+\                      '%S:p:r.bbl',
+\                      '%S:p:r.blg',
+\                      '%S:p:r.dvi',
+\                      '%S:p:r.fdb_latexmk',
+\                      '%S:p:r.fls',
+\                      '%S:p:r.log',
+\                      '%S:p:r.out'
+\                      ],
+\	"exec": "%c %o %a %s"
+\	},
+\}
+" kill quickrun with ctrl+c
+nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 
 " exit NeoBundle config
 call neobundle#end() 
