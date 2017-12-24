@@ -165,3 +165,32 @@ function promps {
 }
 promps
 
+
+# aliases for unix
+source /opt/ros/kinetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
+
+#export ROS_HOSTNAME=192.168.123.15
+#export ROS_MASTER_URI=http://${ROS_HOSTNAME}:11311
+
+alias cw='cd ~/catkin_ws'
+alias cs='cd ~/catkin_ws/src'
+alias cm='cd ~/catkin_ws && catkin_make'
+
+
+# Aliases for MSYS2 bash
+export PATH=$PATH:mingw32/bin
+# Windowsコマンド文字化け対策
+function wincmd()
+{
+    CMD=$1
+    shift
+    $CMD $* 2>&1 | iconv -f CP932 -t UTF-8
+}
+alias cmd='winpty cmd'
+alias psh='winpty powershell'
+alias ipconfig='wincmd ipconfig'
+alias netstat='wincmd netstat'
+alias netsh='wincmd netsh'
+
+
