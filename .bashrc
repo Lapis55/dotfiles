@@ -84,13 +84,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # some more aliases
-alias sl="sudo mousepad /etc/apt/sources.list"
 alias install='sudo apt install'
 alias reinstall='sudo apt-get install --reinstall'
 alias finstall='sudo apt -f install'
@@ -133,23 +127,23 @@ PS1='\[\033[0;33m\]\[\033[0m\033[0;33m\]\u\[\033[0;36m\] @ \[\033[0;36m\]\h  \w\
 
 fi
 
+
 #
 # added by mine
 #
-source /opt/ros/kinetic/setup.bash
-source ~/catkin_ws/devel/setup.bash
-
-#export ROS_HOSTNAME=192.168.123.15
-#export ROS_MASTER_URI=http://${ROS_HOSTNAME}:11311
-
-alias cw='cd ~/catkin_ws'
-alias cs='cd ~/catkin_ws/src'
-alias cm='cd ~/catkin_ws && catkin_make'
-
-
 export EDITOR='vim'
-export PATH=$PATH:mingw32/bin
-export PYTHONPATH=$PYTHONPATH:$HOME/LeapSDK/lib/x86:$HOME/LeapSDK/lib
+# for vimrc C-s remap
+stty -ixon
+
+# 移動しやすく
+alias ..='cd ..'
+alias ...='cd ../..'
+alias -- -='cd -'
+
+# lsを使いやすく
+alias ls='ls --color=auto --show-control-chars --time-style=long-iso -FH'
+alias ll='ls -lA'
+alias la='ls -A'
 
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
@@ -170,7 +164,4 @@ function promps {
     PS1="${TITLEBAR}${GREEN}${BASE}${WHITE}:${BLUE}\W${GREEN}\$(parse_git_branch)${BLUE}\$${WHITE} "
 }
 promps
-
-# for vimrc C-s remap
-stty -ixon
 
