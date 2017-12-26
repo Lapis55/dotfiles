@@ -51,9 +51,6 @@ NeoBundleLazy 'Shougo/vimshell', {
   \   'mappings' : ['<Plug>(vimshell_switch)']
   \ }}
 
-" colorscheme
-NeoBundle 'Badacadabra/vim-archery'
-
 " quickrun
 NeoBundleLazy 'thinca/vim-quickrun',{
 \	"autoload" : { 'filetypes' : ["c","cpp","rb","py","tex"]}
@@ -138,15 +135,15 @@ packadd matchit
 
 
 "--- Added by mine ---"
-"set background=dark
+set background=dark
 syntax on
 set t_Co=256
 if has("win32unix")
-	colorscheme archery
+	colorscheme elflord
 elseif has("win32")
 	" to avoid kaoriya color accident, no color
 elseif has("unix")
-	colorscheme archery
+	colorscheme elflord
 endif
 
 set noswapfile			" don't make swap file
