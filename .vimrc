@@ -138,13 +138,7 @@ packadd matchit
 set background=dark
 syntax on
 set t_Co=256
-if has("win32unix")
-	colorscheme elflord
-elseif has("win32")
-	" to avoid kaoriya color accident, no color
-elseif has("unix")
-	colorscheme elflord
-endif
+colorscheme elflord
 
 set noswapfile			" don't make swap file
 set fenc=utf-8			" set unicode
