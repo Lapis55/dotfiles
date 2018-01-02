@@ -70,7 +70,7 @@ let g:quickrun_config = {
 \	"outputter/error/success" : "null",
 \	"outputter/error/error" : "quickfix",
 \	"srcfile" : expand("%"),
-\	"cmdopt": "-pvc",
+\	"cmdopt": "-pdfdvi",
 \	"hook/sweep/files" : [
 \                      '%S:p:r.aux',
 \                      '%S:p:r.bbl',
