@@ -167,16 +167,17 @@ promps
 
 
 # aliases for unix
-source /opt/ros/kinetic/setup.bash
-source ~/catkin_ws/devel/setup.bash
+if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  source /opt/ros/kinetic/setup.bash
+  source ~/catkin_ws/devel/setup.bash
 
-#export ROS_HOSTNAME=192.168.123.15
-#export ROS_MASTER_URI=http://${ROS_HOSTNAME}:11311
+  #export ROS_HOSTNAME=192.168.123.15
+  #export ROS_MASTER_URI=http://${ROS_HOSTNAME}:11311
 
-alias cw='cd ~/catkin_ws'
-alias cs='cd ~/catkin_ws/src'
-alias cm='cd ~/catkin_ws && catkin_make'
-
+  alias cw='cd ~/catkin_ws'
+  alias cs='cd ~/catkin_ws/src'
+  alias cm='cd ~/catkin_ws && catkin_make'
+fi
 
 # Aliases for MSYS2 bash
 export PATH=$PATH:mingw32/bin

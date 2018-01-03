@@ -7,7 +7,8 @@ $pdf_update_method = 2;
 if ($^O eq 'windows') {
     $pdf_previewer = 'start "C:/Program Files/SumatraPDF/SumatraPDF.exe" %O %S';
 } elsif ($^O eq 'linux') {
-    $pdf_previewer = 'evince';
+#    $pdf_previewer = 'evince %S & invevince %S "vim %f +%l"';
+    $pdf_previewer = 'evince %S';
 }
 $max_repeat = 5;
 #prevent latexmk from removing PDF after typeset
