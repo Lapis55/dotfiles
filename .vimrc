@@ -30,6 +30,9 @@ NeoBundle 'Shougo/neosnippet-snippets'
 " cursor jump
 NeoBundle 'easymotion/vim-easymotion'
 
+" comment out
+NeoBundle 'tomtom/tcomment_vim'
+
 " asyncronous exe
 NeoBundle 'Shougo/vimproc', {
 \ 'build' : {
