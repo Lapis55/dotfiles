@@ -21,6 +21,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " list install or using plug-ins
 " convenient
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'vim-scripts/vim-auto-save'
+let g:auto_save = 1
 
 " auto complete
 NeoBundle 'Shougo/neocomplcache.vim'
