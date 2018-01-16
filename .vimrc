@@ -22,7 +22,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " convenient
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'vim-scripts/vim-auto-save'
-let g:auto_save = 1
+let g:auto_save = 0 "interfere with neosnippet, then false(0)
 
 " auto complete
 NeoBundle 'Shougo/neocomplcache.vim'
