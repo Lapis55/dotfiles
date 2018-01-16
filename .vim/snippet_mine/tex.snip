@@ -1,0 +1,18 @@
+snippet figure2
+alias   \begin{figure} \figure 2
+    \begin{figure}[${1}]
+    \begin{minipage}{${2}\hsize}
+        \centering
+        \includegraphics[${3:width=${4\}}]{${5}}
+        \caption{${6}}
+        \label{${7}}
+    \end{minipage}
+    \begin{minipage}{${8}\hsize}
+        \centering
+        \includegraphics[${9:width=${10\}}]{${11}}
+        \caption{${12}}
+        \label{${13}}
+    \end{minipage}
+    \end{figure}
+    ${14}
+

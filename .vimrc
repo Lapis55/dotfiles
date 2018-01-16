@@ -245,8 +245,8 @@ inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
 inoremap <expr><C-l> neocomplcache#undo_completion()
 
 " user definition snippet
-let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/'
-
+let s:my_snippet = '~/.vim/snippet_mine/'
+let g:neosnippet#snippets_directory=s:my_snippet
 
 " vimshell {{{
 nmap <silent> vs :<C-u>VimShell<CR>
