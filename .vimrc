@@ -78,7 +78,6 @@ let g:quickrun_config = {
 \	"cmdopt": "-pdfdvi",
 \	"hook/sweep/files" : [
 \                      '%S:p:r.aux',
-\                      '%S:p:r.bbl',
 \                      '%S:p:r.blg',
 \                      '%S:p:r.dvi',
 \                      '%S:p:r.fdb_latexmk',
