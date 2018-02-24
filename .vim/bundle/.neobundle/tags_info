@@ -7,5 +7,4 @@ unite.vim
 vim-auto-save
 vim-easymotion
 vim-quickrun
-vimproc
 vimshell
