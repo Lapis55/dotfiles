@@ -4,7 +4,8 @@ $bibtex = 'pbibtex %O %B';
 $dvipdf = 'dvipdfmx %S';
 $pdf_mode = 3; # use dvipdf
 $pdf_update_method = 2;
-if ($^O eq 'windows') {
+# $pdf_previewer = 'start "C:/Program Files/SumatraPDF/SumatraPDF.exe" %O %S';
+if ($^O eq 'msys') {
     $pdf_previewer = 'start "C:/Program Files/SumatraPDF/SumatraPDF.exe" %O %S';
 } elsif ($^O eq 'linux') {
 #    $pdf_previewer = 'evince %S & invevince %S "vim %f +%l"';
