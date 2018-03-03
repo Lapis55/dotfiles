@@ -155,10 +155,11 @@ if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
   alias cs='cd ~/catkin_ws/src'
   alias cm='cd ~/catkin_ws && catkin_make'
 else
-# Aliases for MSYS2 and git bash
+# aliases for MSYS2 and git bash
   export PATH=$PATH:mingw64/bin
   export PATH=$PATH:mingw32/bin
-  # Windowsコマンド文字化け対策
+
+  # anti Windows garbling
   function wincmd()
   {
       CMD=$1
