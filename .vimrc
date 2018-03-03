@@ -19,14 +19,80 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " list install or using plug-ins
+" convenient
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'vim-scripts/vim-auto-save'
+let g:auto_save = 0 "interfere with neosnippet, then false(0)
+
+" auto complete
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+
+" cursor jump
 NeoBundle 'easymotion/vim-easymotion'
 
+" comment out
+NeoBundle 'tomtom/tcomment_vim'
+
+" asyncronous exe
+NeoBundle 'Shougo/vimproc', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+
+" shell on vim
+NeoBundleLazy 'Shougo/vimshell', {
+  \ 'depends' : 'Shougo/vimproc',
+  \ 'autoload' : {
+  \   'commands' : [{ 'name' : 'VimShell', 'complete' : 'customlist,vimshell#complete'},
+  \                 'VimShellExecute', 'VimShellInteractive',
+  \                 'VimShellTerminal', 'VimShellPop'],
+  \   'mappings' : ['<Plug>(vimshell_switch)']
+  \ }}
+
+" quickrun
+NeoBundleLazy 'thinca/vim-quickrun',{
+\	"autoload" : { 'filetypes' : ["c","cpp","rb","py","tex"]}
+\}
+" asyncronous exe, update output per 60[ms]
+" output window: bottom, if no output: window close
+let g:quickrun_config = {
+\ "_" : {
+\	"runner" : "vimproc",
+\	"runner/vimproc/updatetime" : 60,
+\       "outputter/buffer/split" : ":botright",
+\       "outputter/buffer/close_on_empty" : 1
+\	},
+\ "tex" : {
+\	"command" : "latexmk",
+\	"outputter" : "error",
+\	"outputter/error/success" : "null",
+\	"outputter/error/error" : "quickfix",
+\	"srcfile" : expand("%"),
+\	"cmdopt": "-pdfdvi",
+\	"hook/sweep/files" : [
+\                      '%S:p:r.aux',
+\                      '%S:p:r.blg',
+\                      '%S:p:r.dvi',
+\                      '%S:p:r.fdb_latexmk',
+\                      '%S:p:r.fls',
+\                      '%S:p:r.log',
+\                      '%S:p:r.out'
+\                      ],
+\	"exec": "%c %o %a %s"
+\	},
+\}
+" kill quickrun with ctrl+c
+nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+
 " exit NeoBundle config
-call neobundle#end()
+call neobundle#end() 
 
 filetype plugin indent on
 
@@ -73,8 +139,10 @@ packadd matchit
 
 
 "--- Added by mine ---"
-colorscheme molokai
+set background=dark
 syntax on
+set t_Co=256
+colorscheme elflord
 
 set noswapfile			" don't make swap file
 set fenc=utf-8			" set unicode
@@ -87,13 +155,18 @@ set showmatch			" show the pair ( )
 set ignorecase			" when search c, don't distinguish C and c
 set smartcase			" when search C, distinguish C and c
 set title			" display title
+set clipboard=unnamed,unnamedplus " sync with OS clip board
 
 "clear highlight command
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
  
 "unable C-Z and replace as undo
-inoremap <C-Z>	<Esc>ui		
-nnoremap <C-Z>	u
+inoremap <C-Z> <Esc>ui		
+nnoremap <C-Z> u
+
+"unable C-S and replace as undo
+inoremap <C-s> <Esc>:w<CR>
+nnoremap <C-s> :w<CR>
 
 "use arrow key as gj, gk
 nnoremap <Down> gj
@@ -163,11 +236,22 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 " select with TAB
 imap <expr><TAB> pumvisible() ? "\<C-n>" :neosnippet#expandable_or_jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" back with TAB
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" :neosnippet#expandable_or_jumpable() ? "<Plug>(neosnippet_expand_or_jump)" : "\<S-TAB>"
 " decide with Enter
 inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
 " undo completion 
 inoremap <expr><C-l> neocomplcache#undo_completion()
 
 " user definition snippet
-let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/'
+let s:my_snippet = '~/.vim/snippet_mine/'
+let g:neosnippet#snippets_directory=s:my_snippet
+
+" vimshell {{{
+nmap <silent> vs :<C-u>VimShell<CR>
+nmap <silent> vp :<C-u>VimShellPop<CR>
+" }}}
+
+" show second bottom line
+set laststatus=2
 

@@ -2,5 +2,10 @@ neobundle.vim
 neocomplcache.vim
 neosnippet
 neosnippet-snippets
+tcomment_vim
 unite.vim
+vim-auto-save
 vim-easymotion
+vim-quickrun
+vimproc
+vimshell

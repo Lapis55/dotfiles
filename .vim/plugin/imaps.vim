@@ -1,4 +1,4 @@
-"        File: imaps.vim
+﻿"        File: imaps.vim
 "     Authors: Srinath Avadhanula <srinath AT fastmail.fm>
 "              Benji Fisher <benji AT member.AMS.org>
 "              

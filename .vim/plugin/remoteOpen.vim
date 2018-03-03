@@ -1,4 +1,4 @@
-" File: remoteOpen.vim
+﻿" File: remoteOpen.vim
 " Author: Srinath Avadhanula <srinath AT fastmail DOT fm>
 " 
 " Description:

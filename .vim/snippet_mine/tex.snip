@@ -1,0 +1,81 @@
+snippet figure1
+alias   \figure1 1fig
+    \begin{figure}[${1}]
+        \centering
+        \includegraphics[${2:width=${3\}}]{${4}.${5}}
+        \caption{${6}}
+        \label{fig.$4}
+    \end{figure}${0}
+
+snippet figure2
+alias   \figure2 2fig
+    \begin{figure}[${1}]
+    \begin{minipage}{${2}\hsize}
+        \centering
+        \includegraphics[${3:width=${4\}}]{${5}.${6}}
+        \caption{${7}}
+        \label{fig.$5}
+    \end{minipage}
+    \begin{minipage}{${8}\hsize}
+        \centering
+        \includegraphics[${9:width=${10\}}]{${11}.${12}}
+        \caption{${13}}
+        \label{fig.$11}
+    \end{minipage}
+    \end{figure}${0}
+
+
+snippet Ass
+alias ass \Ass \ass
+    \begin{assumption}\label{ass.${1}}
+        ${2:TARGET}
+    \end{assumption}${0}
+
+snippet Def
+alias def \Def \def
+    \begin{definition}\label{def.${1}}
+        ${2:TARGET}
+    \end{definition}${0}
+
+snippet Theo
+alias theo \Theo \theo
+    \begin{theorem}\label{theo.${1}}
+        ${2:TARGET}
+    \end{theorem}${0}
+
+snippet Lemma
+alias lemma \Lemma \lemma
+    \begin{lemma}\label{lem.${1}}
+        ${2:TARGET}
+    \end{lemma}${0}
+
+snippet Corollary
+alias corollary \Corollary \corollary
+    \begin{corollary}\label{cor.${1}}
+        ${2:TARGET}
+    \end{corollary}${0}
+
+snippet Remark
+alias remark \Remark \remark
+    \begin{remark}\label{rem.${1}}
+        ${2:TARGET}
+    \end{remark}${0}
+
+snippet Example
+alias example \Example \example
+    \begin{example}\label{ex.${1}}
+        ${2:TARGET}
+    \end{example}${0}
+
+snippet Proposition
+alias proposition \Proposition \proposition
+    \begin{proposition}\label{prop.${1}}
+        ${2:TARGET}
+    \end{proposition}${0}
+
+snippet Proof
+alias proof \Proof \proof
+    \begin{proof}\label{prof.${1}}
+        ${2:TARGET}
+    \end{proof}${0}
+

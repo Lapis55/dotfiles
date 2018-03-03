@@ -1,4 +1,4 @@
-" filebrowser.vim: utility file for vim 6.2+
+﻿" filebrowser.vim: utility file for vim 6.2+
 "
 " Copyright: Srinath Avadhanula <srinath AT fastmail DOT fm>
 " 	Parts of this file are taken from explorer.vim which is a plugin file

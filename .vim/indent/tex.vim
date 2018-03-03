@@ -1,4 +1,4 @@
-" Vim indent file
+﻿" Vim indent file
 "
 " Options: {{{
 "

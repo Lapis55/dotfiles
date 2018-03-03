@@ -1,4 +1,4 @@
-" LaTeX filetype
+﻿" LaTeX filetype
 "	  Language: LaTeX (ft=tex)
 "	Maintainer: Srinath Avadhanula
 "		 Email: srinath@fastmail.fm
