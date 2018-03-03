@@ -101,7 +101,7 @@ NeoBundleCheck
 
 
 
-"--- Derived from the sample ---"
+"--- Derived from sample ---"
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -164,7 +164,7 @@ nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 inoremap <C-Z> <Esc>ui		
 nnoremap <C-Z> u
 
-"unable C-S and replace as undo
+"unable C-S and replace as save
 inoremap <C-s> <Esc>:w<CR>
 nnoremap <C-s> :w<CR>
 
@@ -197,6 +197,7 @@ let g:Imap_StickyPlaceHolders = 0
 " disable folding
 let g:Tex_Folding = 0
 let g:Tex_AutoFolding = 0
+
 
 ""
 "" easymotion
@@ -247,10 +248,12 @@ inoremap <expr><C-l> neocomplcache#undo_completion()
 let s:my_snippet = '~/.vim/snippet_mine/'
 let g:neosnippet#snippets_directory=s:my_snippet
 
-" vimshell {{{
+
+""
+"" vimshell
+""
 nmap <silent> vs :<C-u>VimShell<CR>
 nmap <silent> vp :<C-u>VimShellPop<CR>
-" }}}
 
 " show second bottom line
 set laststatus=2
