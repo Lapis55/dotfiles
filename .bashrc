@@ -132,6 +132,7 @@ alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 alias dupgrade='sudo apt-get dist-upgrade'
 alias remove='sudo apt-get remove'
+alias eps2pdf='for fig in *.eps; do magick -density 300 $fig ${fig%.*}.pdf ; done'
 
 # add branch name
 # list -> delete name begin with non-'*' -> replace '* branch' to '(branch)'
