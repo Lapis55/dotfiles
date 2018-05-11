@@ -126,13 +126,22 @@ alias ls='ls --color=auto --show-control-chars --time-style=long-iso -FH'
 alias la='ls -A'
 
 # some more aliases
+# apt
 alias install='sudo apt-get install'
 alias reinstall='sudo apt-get install --reinstall'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 alias dupgrade='sudo apt-get dist-upgrade'
 alias remove='sudo apt-get remove'
+# figure
 alias eps2pdf='for fig in *.eps; do magick -density 300 $fig ${fig%.*}.pdf ; done'
+# git
+alias ga='git add '
+alias gaa='git add *'
+alias gcm='git commit -m '
+alias gss='git stash save'
+alias gpuo='git push -u origin '
+alias gpl='git pull'
 
 # add branch name
 # list -> delete name begin with non-'*' -> replace '* branch' to '(branch)'
