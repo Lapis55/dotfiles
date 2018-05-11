@@ -139,6 +139,7 @@ alias eps2pdf='for fig in *.eps; do magick -density 300 $fig ${fig%.*}.pdf ; don
 alias ga='git add '
 alias gaa='git add *'
 alias gcm='git commit -m '
+alias gstt='git status'
 alias gss='git stash save'
 alias gpuo='git push -u origin '
 alias gpl='git pull'
