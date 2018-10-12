@@ -136,7 +136,7 @@ alias reinstall='sudo apt-get install --reinstall'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 alias dupgrade='sudo apt-get dist-upgrade'
-alias remove='sudo apt-get remove'
+alias autoremove='sudo apt-get autoremove'
 # figure
 alias eps2pdf='for fig in *.eps; do magick -density 300 $fig ${fig%.*}.pdf ; done'
 # git

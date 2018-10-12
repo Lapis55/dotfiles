@@ -222,5 +222,5 @@ bar {
 }
 
 # cyclic backdrops
-exec_always ~/Documents/dotfiles/i3_files/update-wallpaper.sh
+exec_always ~/dotfiles/i3_files/update-wallpaper.sh
 
