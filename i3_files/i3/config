@@ -223,4 +223,5 @@ bar {
 
 # cyclic backdrops
 exec_always ~/dotfiles/i3_files/update-wallpaper.sh
+exec --no-startup-id dropbox start -i
 
