@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if [ $$ != $(pgrep -fo $(basename $0)) ]; then
     exit 0
 fi
