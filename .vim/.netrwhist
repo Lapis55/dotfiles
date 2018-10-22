@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/c/system_workbench/Nucleo_blink_led/.git'
 let g:netrw_dirhist_2='/home/obsidian/dotfiles/i3_files'
+let g:netrw_dirhist_3='/home/lapis/dotfiles/i3_files/i3'

@@ -221,8 +221,8 @@ bar {
 	font pango:DejaVu Sans 16px
 }
 
-# cyclic backdrops
-exec_always ~/dotfiles/i3_files/update-wallpaper.sh
 # dropbox sync
 exec --no-startup-id dropbox start -i
+# cyclic backdrops
+exec_always ~/dotfiles/i3_files/update-wallpaper.sh
 

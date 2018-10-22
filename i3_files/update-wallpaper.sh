@@ -1,7 +1,7 @@
 #!/bin/bash
-if [ $$ != $(pgrep -fo $(basename $0)) ]; then
-    exit 0
-fi
+# if [ $$ != $(pgrep -fo $(basename $0)) ]; then
+#     exit 0
+# fi
 
 interval=5m # update interval
 imgPath=~/Dropbox/backdrops/ # backdrops directory
