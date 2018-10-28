@@ -2,9 +2,9 @@ snippet figure1
 alias   \figure1 1fig
     \begin{figure}[${1}]
         \centering
-        \includegraphics[${2:width=${3\}}]{${4}.${5}}
-        \caption{${6}}
-        \label{fig.$4}
+        \includegraphics[${2:width=${3\}}]{${4}}
+        \caption{${5}}
+        \label{fig.${6}}
     \end{figure}${0}
 
 snippet figure2
@@ -12,15 +12,15 @@ alias   \figure2 2fig
     \begin{figure}[${1}]
     \begin{minipage}{${2}\hsize}
         \centering
-        \includegraphics[${3:width=${4\}}]{${5}.${6}}
-        \caption{${7}}
-        \label{fig.$5}
+        \includegraphics[${3:width=${4\}}]{${5}}
+        \caption{${6}}
+        \label{fig.${7}}
     \end{minipage}
     \begin{minipage}{${8}\hsize}
         \centering
-        \includegraphics[${9:width=${10\}}]{${11}.${12}}
-        \caption{${13}}
-        \label{fig.$11}
+        \includegraphics[${9:width=${10\}}]{${11}}
+        \caption{${12}}
+        \label{fig.${13}}
     \end{minipage}
     \end{figure}${0}
 
@@ -44,37 +44,37 @@ alias theo \Theo \theo
     \end{theorem}${0}
 
 snippet Lemma
-alias lemma \Lemma \lemma
+alias lem lemma \Lemma \lemma
     \begin{lemma}\label{lem.${1}}
         ${2:TARGET}
     \end{lemma}${0}
 
 snippet Corollary
-alias corollary \Corollary \corollary
+alias cor corollary \Corollary \corollary
     \begin{corollary}\label{cor.${1}}
         ${2:TARGET}
     \end{corollary}${0}
 
 snippet Remark
-alias remark \Remark \remark
+alias rem remark \Remark \remark
     \begin{remark}\label{rem.${1}}
         ${2:TARGET}
     \end{remark}${0}
 
 snippet Example
-alias example \Example \example
+alias ex example \Example \example
     \begin{example}\label{ex.${1}}
         ${2:TARGET}
     \end{example}${0}
 
 snippet Proposition
-alias proposition \Proposition \proposition
+alias prop proposition \Proposition \proposition
     \begin{proposition}\label{prop.${1}}
         ${2:TARGET}
     \end{proposition}${0}
 
 snippet Proof
-alias proof \Proof \proof
+alias prof proof \Proof \proof
     \begin{proof}\label{prof.${1}}
         ${2:TARGET}
     \end{proof}${0}

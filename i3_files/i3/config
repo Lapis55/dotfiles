@@ -188,10 +188,9 @@ bindsym $mod+r mode "resize"
 # shortcut 
 set $shortcut "press shortcut key"
 mode $shortcut{
-		bindsym c exec google-chrome; mode "default"
+		bindsym t exec thunderbird; mode "default"
 		bindsym f exec firefox; mode "default"
 		bindsym z exec nautilus --no-desktop; mode "default"
-		bindsym e exec evince; mode "default"
 
         # back to normal
         bindsym q mode "default"
