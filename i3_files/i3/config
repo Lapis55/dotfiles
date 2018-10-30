@@ -222,6 +222,7 @@ bar {
 
 # dropbox sync
 exec --no-startup-id dropbox start -i
+exec --no-startup-id google-drive-ocamlfuse ~/GoogleDrive
 # cyclic backdrops
 exec_always ~/dotfiles/i3_files/update-wallpaper.sh
 

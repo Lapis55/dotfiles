@@ -147,6 +147,8 @@ alias gstt='git status'
 alias gss='git stash save'
 alias gpuo='git push -u origin '
 alias gpl='git pull'
+# Drive
+alias ggldrv='fusermount -u ~/GoogleDrive; google-drive-ocamlfuse ~/GoogleDrive'
 
 # add branch name
 # list -> delete name begin with non-'*' -> replace '* branch' to '(branch)'
