@@ -191,6 +191,7 @@ mode $shortcut{
 		bindsym t exec thunderbird; mode "default"
 		bindsym f exec firefox; mode "default"
 		bindsym z exec nautilus --no-desktop; mode "default"
+		bindsym e exec evince; mode "default"
 
         # back to normal
         bindsym q mode "default"
