@@ -111,9 +111,13 @@ fi
 
 
 #
-# added by mine
+# added by Mine
 #
 export EDITOR='vim'
+alias nano='vim'
+alias emacs='vim'
+alias gedit='vim'
+
 # for vimrc C-s remap
 stty -ixon
 
@@ -126,12 +130,25 @@ alias ls='ls --color=auto --show-control-chars --time-style=long-iso -FH'
 alias la='ls -A'
 
 # some more aliases
+# apt
 alias install='sudo apt-get install'
 alias reinstall='sudo apt-get install --reinstall'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 alias dupgrade='sudo apt-get dist-upgrade'
-alias remove='sudo apt-get remove'
+alias autoremove='sudo apt-get autoremove'
+# figure
+alias eps2pdf='for fig in *.eps; do magick -density 300 $fig ${fig%.*}.pdf ; done'
+# git
+alias ga='git add '
+alias gaa='git add *'
+alias gcm='git commit -m '
+alias gstt='git status'
+alias gss='git stash save'
+alias gpuo='git push -u origin '
+alias gpl='git pull'
+# Drive
+alias ggldrv='fusermount -u ~/GoogleDrive; google-drive-ocamlfuse ~/GoogleDrive'
 
 # add branch name
 # list -> delete name begin with non-'*' -> replace '* branch' to '(branch)'
