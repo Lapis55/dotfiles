@@ -35,6 +35,9 @@ NeoBundle 'easymotion/vim-easymotion'
 " comment out
 NeoBundle 'tomtom/tcomment_vim'
 
+" count chars
+NeoBundle 'anekos/char-counter-vim'
+
 " asyncronous exe
 NeoBundle 'Shougo/vimproc', {
 \ 'build' : {
@@ -180,6 +183,22 @@ nnoremap お o
 nnoremap ｄｄ dd
 nnoremap ｙｙ yy
 
+" statusline show(0: none)
+set laststatus=2
+" filename
+set statusline=%F
+" changed
+set statusline+=%m
+" read only
+set statusline+=%r
+" go right side
+set statusline+=%=
+" file encoding
+set statusline+=[ENC=%{&fileencoding}]
+" row(now/all)
+set statusline+=[LOW=%l/%L]
+" counter plugin result(total chars)
+set statusline+=%{b:charCounterCount}
 
 ""
 "" Vim-LaTeX
@@ -255,6 +274,4 @@ let g:neosnippet#snippets_directory=s:my_snippet
 nmap <silent> vs :<C-u>VimShell<CR>
 nmap <silent> vp :<C-u>VimShellPop<CR>
 
-" show second bottom line
-set laststatus=2
 
