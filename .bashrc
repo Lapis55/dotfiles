@@ -151,14 +151,19 @@ alias gpl='git pull'
 alias ggldrv='fusermount -u ~/GoogleDrive; google-drive-ocamlfuse ~/GoogleDrive'
 
 # add branch name
-# list -> delete name begin with non-'*' -> replace '* branch' to '(branch)'
-function get_branch {
-  git branch 2> /dev/null | sed '/^[^*]/d' | sed 's/* \(.*\)/(\1)/'
-  # if not git repo, error drain to /dev/null
-}
 # color, host, color, :, color, pwd, color, branch, color, $, color
-PS1='\[\e[1;36m\]\h\[\e[00m\]:\[\e[1;35m\]\W\[\e[1;33m\] $(get_branch)\[\e[1;33m\]$ \[\e[00m\]'
-
+PS1='\[\e[1;36m\]\h\[\e[00m\]:\[\e[1;35m\]\W\[\e[1;33m\] $(__git_ps1)\[\e[1;33m\]$ \[\e[00m\]'
+# git-completion.bash / git-prompt.sh
+if [ -f /path/to/git-completion.bash ]; then
+    source /path/to/git-completion.bash
+fi
+if [ -f /path/to/git-prompt.sh ]; then
+    source /path/to/git-prompt.sh
+fi
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
 
 if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
 # aliases for unix
