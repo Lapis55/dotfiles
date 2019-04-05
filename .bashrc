@@ -128,6 +128,11 @@ alias ...='cd ../..'
 # ls
 alias ls='ls --color=auto --show-control-chars --time-style=long-iso -FH'
 alias la='ls -A'
+cdls ()
+{
+    \cd "$@" && ls
+}
+alias cd="cdls"
 
 # some more aliases
 # apt
