@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/c/system_workbench/Nucleo_blink_led/.git'
 let g:netrw_dirhist_2='/home/obsidian/dotfiles/i3_files'
 let g:netrw_dirhist_3='/home/lapis/dotfiles/i3_files/i3'
 let g:netrw_dirhist_4='/etc/systemd'
 let g:netrw_dirhist_5='/lib/systemd/system/rc-local.service.d'
 let g:netrw_dirhist_6='/usr/local/share/texmf'
+let g:netrw_dirhist_7='/home/obsidian/dotfiles/i3_files/i3status'
