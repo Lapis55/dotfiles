@@ -171,7 +171,7 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
 if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-# aliases for unix
+  echo "You Are in Linux"
   source /opt/ros/kinetic/setup.bash
   source ~/catkin_ws/devel/setup.bash
 
@@ -181,8 +181,14 @@ if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
   alias cw='cd ~/catkin_ws'
   alias cs='cd ~/catkin_ws/src'
   alias cm='cd ~/catkin_ws && catkin_make'
+
+  if [[ $(uname -a) =~ Microsoft ]]; then
+    echo "You Are in WSL"
+    export DISPLAY=localhost:0.0
+    export TERMINAL=xfce4-terminal
+  fi
 else
-# aliases for MSYS2 and git bash
+  echo "You Are in MSYS2 or Git-Bash"
   export PATH=$PATH:mingw64/bin
   export PATH=$PATH:mingw32/bin
 
