@@ -157,7 +157,7 @@ alias ggldrv='fusermount -u ~/GoogleDrive; google-drive-ocamlfuse ~/GoogleDrive'
 
 # add branch name
 # color, host, color, :, color, pwd, color, branch, color, $, color
-PS1='\[\e[1;36m\]\h\[\e[00m\]:\[\e[1;35m\]\W\[\e[1;33m\] $(__git_ps1)\[\e[1;33m\]$ \[\e[00m\]'
+PS1='\[\e[1;36m\]\u\[\e[00m\]:\[\e[1;35m\]\W\[\e[1;33m\] $(__git_ps1)\[\e[1;33m\]$ \[\e[00m\]'
 # git-completion.bash / git-prompt.sh
 if [ -f /path/to/git-completion.bash ]; then
     source /path/to/git-completion.bash
