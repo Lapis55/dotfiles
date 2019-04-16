@@ -1,7 +1,7 @@
 ﻿# .minttyrc
 BoldAsFont=no
 #Font=MyricaM M
-FontHeight=10
+FontHeight=12
 
 Columns=80
 Rows=40
@@ -20,3 +20,4 @@ RightClickAction=paste
 BackspaceSendsBS=yes
 
 IMECursorColour=255,0,0
+Font=Takaoゴシック
