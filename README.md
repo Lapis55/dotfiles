@@ -9,3 +9,5 @@ To share yank and clipboard,
 check: vim --version | grep clipboard
 if -clipboard, install vim-gnome
 
+WSL also OK.
+
