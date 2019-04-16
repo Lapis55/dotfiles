@@ -171,7 +171,6 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
 if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-  echo "You Are in Linux"
   source /opt/ros/kinetic/setup.bash
   source ~/catkin_ws/devel/setup.bash
 
@@ -186,6 +185,8 @@ if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     echo "You Are in WSL"
     export DISPLAY=localhost:0.0
     export TERMINAL=xfce4-terminal
+  else
+    echo "You Are in Linux"
   fi
 else
   echo "You Are in MSYS2 or Git-Bash"
