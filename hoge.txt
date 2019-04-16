@@ -1,3 +1,0 @@
-export DISPLAY=localhost:0.0
-export TERMINAL=xfce4-terminal
-
