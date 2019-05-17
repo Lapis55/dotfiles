@@ -174,9 +174,6 @@ if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
   source /opt/ros/kinetic/setup.bash
   source ~/catkin_ws/devel/setup.bash
 
-  # self IP
-  export ROS_IP=`hostname -I | cut -d' ' -f1`
-
   alias cw='cd ~/catkin_ws'
   alias cs='cd ~/catkin_ws/src'
   alias cm='cd ~/catkin_ws && catkin_make'
