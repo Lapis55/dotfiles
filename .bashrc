@@ -178,6 +178,8 @@ if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
   alias cs='cd ~/catkin_ws/src'
   alias cm='cd ~/catkin_ws && catkin_make'
 
+  export ROS_IP=`hostname -I | cut -d' ' -f1`
+
   if [[ $(uname -a) =~ Microsoft ]]; then
     echo "You Are in WSL"
     export DISPLAY=localhost:0.0
