@@ -38,6 +38,9 @@ NeoBundle 'tomtom/tcomment_vim'
 " count chars
 NeoBundle 'anekos/char-counter-vim'
 
+" matlab vim exe
+NeoBundle 'MortenStabenau/matlab-vim'
+
 " asyncronous exe
 NeoBundle 'Shougo/vimproc', {
 \ 'build' : {
