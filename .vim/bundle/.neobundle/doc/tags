@@ -412,6 +412,7 @@ g:neocomplcache_text_mode_filetypes	neocomplcache.txt	/*g:neocomplcache_text_mod
 g:neocomplcache_use_vimproc	neocomplcache.txt	/*g:neocomplcache_use_vimproc*
 g:neocomplcache_vim_completefuncs	neocomplcache.txt	/*g:neocomplcache_vim_completefuncs*
 g:neocomplcache_wildcard_characters	neocomplcache.txt	/*g:neocomplcache_wildcard_characters*
+g:neosnippet#conceal_char	neosnippet.txt	/*g:neosnippet#conceal_char*
 g:neosnippet#data_directory	neosnippet.txt	/*g:neosnippet#data_directory*
 g:neosnippet#disable_runtime_snippets	neosnippet.txt	/*g:neosnippet#disable_runtime_snippets*
 g:neosnippet#disable_select_mode_mappings	neosnippet.txt	/*g:neosnippet#disable_select_mode_mappings*
