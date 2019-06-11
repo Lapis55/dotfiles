@@ -116,7 +116,6 @@ fi
 export EDITOR='vim'
 alias nano='vim'
 alias emacs='vim'
-alias gedit='vim'
 
 # for vimrc C-s remap
 stty -ixon
