@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/obsidian/Documents/python_interface'
 let g:netrw_dirhist_2='/media/obsidian'
 let g:netrw_dirhist_3='/home/obsidian'
 let g:netrw_dirhist_4='/home/obsidian/dotfiles/.vim'
 let g:netrw_dirhist_5='/home/lapis/catkin_ws/src/passivity_short/action'
+let g:netrw_dirhist_6='/home/obsidian/catkin_ws/src/passivity_short/bag'
