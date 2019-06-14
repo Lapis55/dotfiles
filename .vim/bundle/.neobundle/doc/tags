@@ -907,6 +907,7 @@ quickrun-module-outputter/loclist	quickrun.txt	/*quickrun-module-outputter\/locl
 quickrun-module-outputter/message	quickrun.txt	/*quickrun-module-outputter\/message*
 quickrun-module-outputter/multi	quickrun.txt	/*quickrun-module-outputter\/multi*
 quickrun-module-outputter/null	quickrun.txt	/*quickrun-module-outputter\/null*
+quickrun-module-outputter/popup	quickrun.txt	/*quickrun-module-outputter\/popup*
 quickrun-module-outputter/quickfix	quickrun.txt	/*quickrun-module-outputter\/quickfix*
 quickrun-module-outputter/variable	quickrun.txt	/*quickrun-module-outputter\/variable*
 quickrun-module-runner	quickrun.txt	/*quickrun-module-runner*
