@@ -145,7 +145,7 @@ alias autoremove='sudo apt-get autoremove'
 alias eps2pdf='for fig in *.eps; do magick -density 300 $fig ${fig%.*}.pdf ; done'
 # git
 alias ga='git add '
-alias gaa='git add *'
+alias gaa='git add .'
 alias gcm='git commit -m '
 alias gstt='git status'
 alias gss='git stash save'
