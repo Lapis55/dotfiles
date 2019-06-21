@@ -194,6 +194,7 @@ mode $shortcut{
 		bindsym c exec unity-control-center; mode "default"
 		bindsym z exec nautilus --no-desktop; mode "default"
 		bindsym e exec evince; mode "default"
+		bindsym m exec matlab; mode "default"
 
         # back to normal
         bindsym q mode "default"
