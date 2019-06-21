@@ -89,7 +89,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child 
 # switch to workspace
-bindsym $mod+1 workspace 1
+bindsym $mod+1 workspace 1:main
 bindsym $mod+2 workspace 2:web
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
@@ -101,7 +101,7 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+1 move container to workspace 1:main
 bindsym $mod+Shift+2 move container to workspace 2:web
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
@@ -186,8 +186,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # assign
-assign [class="thunderbird"] 2:web
-assign [class="google-chrome"] 2:web
+assign [class="^Thunderbird$"] 2:web
+assign [class="^Google-chrome$"] 2:web
 assign [class="Firefox"] 2:web
 assign [class="MATLAB.*"] 5:mat
 
@@ -199,7 +199,7 @@ mode $shortcut{
 		bindsym f exec firefox; mode "default"
 		bindsym c exec unity-control-center; mode "default"
 		bindsym z exec nautilus --no-desktop; mode "default"
-		bindsym m exec matlab; mode "default"
+		bindsym m exec matlab -desktop; mode "default"
 
 		bindsym e exec evince; mode "default"
 
@@ -231,14 +231,16 @@ bar {
 	font pango:DejaVu Sans 16px
 }
 
-# dropbox sync
+# disable sleep
+exec xset s off
+exec xset -dpms
+
+# auto start
 exec --no-startup-id dropbox start -i
 exec --no-startup-id google-drive-ocamlfuse ~/GoogleDrive
 exec --no-startup-id ibus-daemon -r -d -x
-#
-# cyclic backdrops
+exec google-chrome
+exec thunderbird
+# # cyclic backdrops
 # exec_always ~/dotfiles/i3_files/update-wallpaper.sh
-
-exec xset s off
-exec xset -dpms
 
