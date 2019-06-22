@@ -180,6 +180,7 @@ if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
   export ROS_IP=`hostname -I | cut -d' ' -f1`
 
   alias cmatlab='matlab -nojvm -nodisplay -nosplash'
+  export PYTHONPATH=$PYTHONPATH:$HOME/LeapSDK/lib:$HOME/LeapSDK/lib/x64
 
   if [[ $(uname -a) =~ Microsoft ]]; then
     echo "You Are in WSL"
