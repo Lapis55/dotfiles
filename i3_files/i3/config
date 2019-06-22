@@ -239,8 +239,6 @@ exec xset -dpms
 exec --no-startup-id dropbox start -i
 exec --no-startup-id google-drive-ocamlfuse ~/GoogleDrive
 exec --no-startup-id ibus-daemon -r -d -x
-exec google-chrome
-exec thunderbird
 # # cyclic backdrops
 # exec_always ~/dotfiles/i3_files/update-wallpaper.sh
 
