@@ -19,6 +19,7 @@ order += "ethernet eno1"
 order += "volume master"
 order += "battery 0"
 order += "load"
+order += "cpu_temperature 0"
 order += "tztime local"
 
 wireless wlo1 {
@@ -58,6 +59,10 @@ tztime local {
 
 load {
         format = "%1min"
+}
+
+cpu_temperature 0 {
+    format = "%degrees°C"
 }
 
 disk "/" {
