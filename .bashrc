@@ -153,6 +153,8 @@ alias gpuo='git push -u origin '
 alias gpl='git pull'
 # Drive
 alias ggldrv='fusermount -u ~/GoogleDrive; google-drive-ocamlfuse ~/GoogleDrive'
+# Mendeley
+alias mendeley='mendeleydesktop'
 
 # add branch name
 # color, host, color, :, color, pwd, color, branch, color, $, color
