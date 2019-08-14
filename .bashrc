@@ -184,6 +184,9 @@ if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
   alias cmatlab='matlab -nojvm -nodisplay -nosplash'
   export PYTHONPATH=$PYTHONPATH:$HOME/LeapSDK/lib:$HOME/LeapSDK/lib/x64
 
+  alias grsimMain='~/SSL/grSim/bin/grsim'
+  alias grsimClient='~/SSL/grSim/bin/client'
+
   if [[ $(uname -a) =~ Microsoft ]]; then
     echo "You Are in WSL"
     export DISPLAY=localhost:0.0
