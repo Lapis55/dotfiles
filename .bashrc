@@ -186,6 +186,7 @@ if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
 
   alias grsimMain='~/SSL/grSim/bin/grsim'
   alias grsimClient='~/SSL/grSim/bin/client'
+  alias sslRefbox='~/SSL/ssl-refbox/sslrefbox'
 
   if [[ $(uname -a) =~ Microsoft ]]; then
     echo "You Are in WSL"
