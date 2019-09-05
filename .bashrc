@@ -172,6 +172,7 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
 if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  echo "You Are in Linux"
   source /opt/ros/kinetic/setup.bash
   source ~/catkin_ws/devel/setup.bash
 
@@ -188,13 +189,8 @@ if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
   alias grsimClient='~/SSL/grSim/bin/client'
   alias sslRefbox='~/SSL/ssl-refbox/sslrefbox'
 
-  if [[ $(uname -a) =~ Microsoft ]]; then
-    echo "You Are in WSL"
-    export DISPLAY=localhost:0.0
-    export TERMINAL=xfce4-terminal
-  else
-    echo "You Are in Linux"
-  fi
+  export TERMINAL=xfce4-terminal
+  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 else
   echo "You Are in MSYS2 or Git-Bash"
   export PATH=$PATH:mingw64/bin
