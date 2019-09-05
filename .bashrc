@@ -116,7 +116,6 @@ fi
 export EDITOR='vim'
 alias nano='vim'
 alias emacs='vim'
-alias gedit='vim'
 
 # for vimrc C-s remap
 stty -ixon
@@ -128,6 +127,11 @@ alias ...='cd ../..'
 # ls
 alias ls='ls --color=auto --show-control-chars --time-style=long-iso -FH'
 alias la='ls -A'
+cdls ()
+{
+    \cd "$@" && ls
+}
+alias cd="cdls"
 
 # some more aliases
 # apt
@@ -141,7 +145,7 @@ alias autoremove='sudo apt-get autoremove'
 alias eps2pdf='for fig in *.eps; do magick -density 300 $fig ${fig%.*}.pdf ; done'
 # git
 alias ga='git add '
-alias gaa='git add *'
+alias gaa='git add .'
 alias gcm='git commit -m '
 alias gstt='git status'
 alias gss='git stash save'
@@ -149,30 +153,46 @@ alias gpuo='git push -u origin '
 alias gpl='git pull'
 # Drive
 alias ggldrv='fusermount -u ~/GoogleDrive; google-drive-ocamlfuse ~/GoogleDrive'
+# Mendeley
+alias mendeley='mendeleydesktop'
 
 # add branch name
-# list -> delete name begin with non-'*' -> replace '* branch' to '(branch)'
-function get_branch {
-  git branch 2> /dev/null | sed '/^[^*]/d' | sed 's/* \(.*\)/(\1)/'
-  # if not git repo, error drain to /dev/null
-}
 # color, host, color, :, color, pwd, color, branch, color, $, color
-PS1='\[\e[1;36m\]\h\[\e[00m\]:\[\e[1;35m\]\W\[\e[1;33m\] $(get_branch)\[\e[1;33m\]$ \[\e[00m\]'
-
+PS1='\[\e[1;36m\]\u\[\e[00m\]:\[\e[1;35m\]\W\[\e[1;33m\] $(__git_ps1)\[\e[1;33m\]$ \[\e[00m\]'
+# git-completion.bash / git-prompt.sh
+if [ -f /path/to/git-completion.bash ]; then
+    source /path/to/git-completion.bash
+fi
+if [ -f /path/to/git-prompt.sh ]; then
+    source /path/to/git-prompt.sh
+fi
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
 
 if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-# aliases for unix
+  echo "You Are in Linux"
   source /opt/ros/kinetic/setup.bash
   source ~/catkin_ws/devel/setup.bash
-
-  #export ROS_HOSTNAME=192.168.123.15
-  #export ROS_MASTER_URI=http://${ROS_HOSTNAME}:11311
 
   alias cw='cd ~/catkin_ws'
   alias cs='cd ~/catkin_ws/src'
   alias cm='cd ~/catkin_ws && catkin_make'
+
+  export ROS_IP=`hostname -I | cut -d' ' -f1`
+
+  alias cmatlab='matlab -nojvm -nodisplay -nosplash'
+  export PYTHONPATH=$PYTHONPATH:$HOME/LeapSDK/lib:$HOME/LeapSDK/lib/x64
+
+  alias grsimMain='~/SSL/grSim/bin/grsim'
+  alias grsimClient='~/SSL/grSim/bin/client'
+  alias sslRefbox='~/SSL/ssl-refbox/sslrefbox'
+
+  export TERMINAL=xfce4-terminal
+  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 else
-# aliases for MSYS2 and git bash
+  echo "You Are in MSYS2 or Git-Bash"
   export PATH=$PATH:mingw64/bin
   export PATH=$PATH:mingw32/bin
 

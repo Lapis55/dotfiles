@@ -1,3 +1,10 @@
+:MatlabBreakpoint	matlab.txt	/*:MatlabBreakpoint*
+:MatlabClearBreakpoint	matlab.txt	/*:MatlabClearBreakpoint*
+:MatlabClearBreakpoints	matlab.txt	/*:MatlabClearBreakpoints*
+:MatlabDoc	matlab.txt	/*:MatlabDoc*
+:MatlabDocumentation	matlab.txt	/*:MatlabDocumentation*
+:MatlabRun	matlab.txt	/*:MatlabRun*
+:MatlabStartServer	matlab.txt	/*:MatlabStartServer*
 :Neco	neocomplcache.txt	/*:Neco*
 :NeoBundle	neobundle.txt	/*:NeoBundle*
 :NeoBundleCheck	neobundle.txt	/*:NeoBundleCheck*
@@ -260,6 +267,7 @@ autoload/tcomment.vim	tcomment.txt	/*autoload\/tcomment.vim*
 autoload/tcomment/commentdef.vim	tcomment.txt	/*autoload\/tcomment\/commentdef.vim*
 autoload/tcomment/filetype.vim	tcomment.txt	/*autoload\/tcomment\/filetype.vim*
 autoload/tcomment/operator.vim	tcomment.txt	/*autoload\/tcomment\/operator.vim*
+autoload/tcomment/syntax.vim	tcomment.txt	/*autoload\/tcomment\/syntax.vim*
 autoload/tcomment/type.vim	tcomment.txt	/*autoload\/tcomment\/type.vim*
 b:neocomplcache_sources_list	neocomplcache.txt	/*b:neocomplcache_sources_list*
 b:neosnippet_disable_snippet_triggers	neosnippet.txt	/*b:neosnippet_disable_snippet_triggers*
@@ -404,10 +412,12 @@ g:neocomplcache_text_mode_filetypes	neocomplcache.txt	/*g:neocomplcache_text_mod
 g:neocomplcache_use_vimproc	neocomplcache.txt	/*g:neocomplcache_use_vimproc*
 g:neocomplcache_vim_completefuncs	neocomplcache.txt	/*g:neocomplcache_vim_completefuncs*
 g:neocomplcache_wildcard_characters	neocomplcache.txt	/*g:neocomplcache_wildcard_characters*
+g:neosnippet#conceal_char	neosnippet.txt	/*g:neosnippet#conceal_char*
 g:neosnippet#data_directory	neosnippet.txt	/*g:neosnippet#data_directory*
 g:neosnippet#disable_runtime_snippets	neosnippet.txt	/*g:neosnippet#disable_runtime_snippets*
 g:neosnippet#disable_select_mode_mappings	neosnippet.txt	/*g:neosnippet#disable_select_mode_mappings*
 g:neosnippet#enable_auto_clear_markers	neosnippet.txt	/*g:neosnippet#enable_auto_clear_markers*
+g:neosnippet#enable_complete_done	neosnippet.txt	/*g:neosnippet#enable_complete_done*
 g:neosnippet#enable_completed_snippet	neosnippet.txt	/*g:neosnippet#enable_completed_snippet*
 g:neosnippet#enable_conceal_markers	neosnippet.txt	/*g:neosnippet#enable_conceal_markers*
 g:neosnippet#enable_optional_arguments	neosnippet.txt	/*g:neosnippet#enable_optional_arguments*
@@ -426,6 +436,7 @@ g:tcomment#block2_fmt_c	tcomment.txt	/*g:tcomment#block2_fmt_c*
 g:tcomment#block_fmt_xml	tcomment.txt	/*g:tcomment#block_fmt_xml*
 g:tcomment#filetype#guess	tcomment.txt	/*g:tcomment#filetype#guess*
 g:tcomment#filetype#guess_blade	tcomment.txt	/*g:tcomment#filetype#guess_blade*
+g:tcomment#filetype#guess_cpp	tcomment.txt	/*g:tcomment#filetype#guess_cpp*
 g:tcomment#filetype#guess_dsl	tcomment.txt	/*g:tcomment#filetype#guess_dsl*
 g:tcomment#filetype#guess_php	tcomment.txt	/*g:tcomment#filetype#guess_php*
 g:tcomment#filetype#ignore_php	tcomment.txt	/*g:tcomment#filetype#ignore_php*
@@ -443,6 +454,7 @@ g:tcomment#options_commentstring	tcomment.txt	/*g:tcomment#options_commentstring
 g:tcomment#replacements_c	tcomment.txt	/*g:tcomment#replacements_c*
 g:tcomment#replacements_xml	tcomment.txt	/*g:tcomment#replacements_xml*
 g:tcomment#rstrip_on_uncomment	tcomment.txt	/*g:tcomment#rstrip_on_uncomment*
+g:tcomment#syntax#substitute	tcomment.txt	/*g:tcomment#syntax#substitute*
 g:tcomment_mapleader1	tcomment.txt	/*g:tcomment_mapleader1*
 g:tcomment_mapleader2	tcomment.txt	/*g:tcomment_mapleader2*
 g:tcomment_mapleader_comment_anyway	tcomment.txt	/*g:tcomment_mapleader_comment_anyway*
@@ -619,6 +631,19 @@ i_<Plug>(vimshell_zsh_complete)	vimshell.txt	/*i_<Plug>(vimshell_zsh_complete)*
 i_vimshell_default_key_mappings	vimshell.txt	/*i_vimshell_default_key_mappings*
 i_vimshell_int_default_key_mappings	vimshell.txt	/*i_vimshell_int_default_key_mappings*
 include_complete	neocomplcache.txt	/*include_complete*
+matlab	matlab.txt	/*matlab*
+matlab-commands	matlab.txt	/*matlab-commands*
+matlab-contents	matlab.txt	/*matlab-contents*
+matlab-credits	matlab.txt	/*matlab-credits*
+matlab-disclaimer	matlab.txt	/*matlab-disclaimer*
+matlab-intro	matlab.txt	/*matlab-intro*
+matlab-maintainer	matlab.txt	/*matlab-maintainer*
+matlab-mappings	matlab.txt	/*matlab-mappings*
+matlab-options	matlab.txt	/*matlab-options*
+matlab.vim	matlab.txt	/*matlab.vim*
+matlab_default_mappings	matlab.txt	/*matlab_default_mappings*
+matlab_executable	matlab.txt	/*matlab_executable*
+matlab_panel_size	matlab.txt	/*matlab_panel_size*
 member_complete	neocomplcache.txt	/*member_complete*
 n_<Plug>(easymotion-overwin-f)	easymotion.txt	/*n_<Plug>(easymotion-overwin-f)*
 n_<Plug>(easymotion-overwin-f2)	easymotion.txt	/*n_<Plug>(easymotion-overwin-f2)*
@@ -882,6 +907,7 @@ quickrun-module-outputter/loclist	quickrun.txt	/*quickrun-module-outputter\/locl
 quickrun-module-outputter/message	quickrun.txt	/*quickrun-module-outputter\/message*
 quickrun-module-outputter/multi	quickrun.txt	/*quickrun-module-outputter\/multi*
 quickrun-module-outputter/null	quickrun.txt	/*quickrun-module-outputter\/null*
+quickrun-module-outputter/popup	quickrun.txt	/*quickrun-module-outputter\/popup*
 quickrun-module-outputter/quickfix	quickrun.txt	/*quickrun-module-outputter\/quickfix*
 quickrun-module-outputter/variable	quickrun.txt	/*quickrun-module-outputter\/variable*
 quickrun-module-runner	quickrun.txt	/*quickrun-module-runner*
@@ -952,7 +978,9 @@ tcomment#filetype#GetAlt()	tcomment.txt	/*tcomment#filetype#GetAlt()*
 tcomment#filetype#Guess()	tcomment.txt	/*tcomment#filetype#Guess()*
 tcomment#type#Define()	tcomment.txt	/*tcomment#type#Define()*
 tcomment#type#GetDefinition()	tcomment.txt	/*tcomment#type#GetDefinition()*
+tcomment-debug	tcomment.txt	/*tcomment-debug*
 tcomment-maps	tcomment.txt	/*tcomment-maps*
+tcomment-new-filetype	tcomment.txt	/*tcomment-new-filetype*
 tcomment-operator	tcomment.txt	/*tcomment-operator*
 tcomment.txt	tcomment.txt	/*tcomment.txt*
 unite	unite.txt	/*unite*
