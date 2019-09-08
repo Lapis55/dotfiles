@@ -185,9 +185,9 @@ if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
   alias cmatlab='matlab -nojvm -nodisplay -nosplash'
   export PYTHONPATH=$PYTHONPATH:$HOME/LeapSDK/lib:$HOME/LeapSDK/lib/x64
 
-  alias grsimMain='~/SSL/grSim/bin/grsim'
+  alias grsimMain='~/SSL/grSim/bin/grSim'
   alias grsimClient='~/SSL/grSim/bin/client'
-  alias sslRefbox='~/SSL/ssl-refbox/sslrefbox'
+  alias sslRefbox='cd ~/SSL/ssl-refbox && ./sslrefbox'
 
   export TERMINAL=xfce4-terminal
   export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
