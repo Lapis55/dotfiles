@@ -41,6 +41,9 @@ NeoBundle 'anekos/char-counter-vim'
 " matlab vim exe
 NeoBundle 'MortenStabenau/matlab-vim'
 
+" git assist
+NeoBundle 'tpope/vim-fugitive' 
+
 " asyncronous exe
 NeoBundle 'Shougo/vimproc', {
 \ 'build' : {

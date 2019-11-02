@@ -8,6 +8,7 @@ tcomment_vim
 unite.vim
 vim-auto-save
 vim-easymotion
+vim-fugitive
 vim-quickrun
 vimproc
 vimshell
