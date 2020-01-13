@@ -14,3 +14,7 @@ $max_repeat = 5;
 #prevent latexmk from removing PDF after typeset
 $pvc_view_file_via_temporary = 0;
 
+# output DIR
+$out_dir          = "build/";
+$aux_dir          = "build/";
+
