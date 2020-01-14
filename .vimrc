@@ -92,6 +92,7 @@ let g:quickrun_config = {
 \                      '%S:p:r.fdb_latexmk',
 \                      '%S:p:r.fls',
 \                      '%S:p:r.log',
+\                      '%S:p:r.toc',
 \                      '%S:p:r.out'
 \                      ],
 \	"exec": "%c %o %a %s"
@@ -279,5 +280,4 @@ let g:neosnippet#snippets_directory=s:my_snippet
 ""
 nmap <silent> vs :<C-u>VimShell<CR>
 nmap <silent> vp :<C-u>VimShellPop<CR>
-
 

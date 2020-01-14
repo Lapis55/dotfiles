@@ -15,9 +15,11 @@
 :Git!	fugitive.txt	/*:Git!*
 :Git-blame	fugitive.txt	/*:Git-blame*
 :Git-commit	fugitive.txt	/*:Git-commit*
+:Git-difftool	fugitive.txt	/*:Git-difftool*
 :Git-fetch	fugitive.txt	/*:Git-fetch*
 :Git-grep	fugitive.txt	/*:Git-grep*
 :Git-merge	fugitive.txt	/*:Git-merge*
+:Git-mergetool	fugitive.txt	/*:Git-mergetool*
 :Git-pull	fugitive.txt	/*:Git-pull*
 :Git-push	fugitive.txt	/*:Git-push*
 :Git-rebase	fugitive.txt	/*:Git-rebase*
@@ -1463,6 +1465,7 @@ vimproc-install	vimproc.txt	/*vimproc-install*
 vimproc-interface	vimproc.txt	/*vimproc-interface*
 vimproc-introduction	vimproc.txt	/*vimproc-introduction*
 vimproc-linux	vimproc.txt	/*vimproc-linux*
+vimproc-macos	vimproc.txt	/*vimproc-macos*
 vimproc-macosx	vimproc.txt	/*vimproc-macosx*
 vimproc-multiarch	vimproc.txt	/*vimproc-multiarch*
 vimproc-objects	vimproc.txt	/*vimproc-objects*
