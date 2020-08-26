@@ -190,7 +190,7 @@ if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
   alias sslRefbox='cd ~/SSL/ssl-refbox && ./sslrefbox'
 
   export TERMINAL=xfce4-terminal
-  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+#  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 else
   echo "You Are in MSYS2 or Git-Bash"
   export PATH=$PATH:mingw64/bin
