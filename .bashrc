@@ -173,8 +173,8 @@ GIT_PS1_SHOWUPSTREAM=auto
 
 if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
   echo "You Are in Linux"
-  source /opt/ros/kinetic/setup.bash
-  source ~/catkin_ws/devel/setup.bash
+  # source /opt/ros/melodic/setup.bash
+  # source ~/catkin_ws/devel/setup.bash
 
   alias cw='cd ~/catkin_ws'
   alias cs='cd ~/catkin_ws/src'

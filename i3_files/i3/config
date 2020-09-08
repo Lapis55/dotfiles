@@ -212,10 +212,14 @@ bindsym $mod+u mode $shortcut
 # sound mode
 set $soundtest "sound mode"
 mode $soundtest{
-		bindsym j exec pactl set-sink-volume 0 -5%
-		bindsym k exec pactl set-sink-volume 0 +5%
-		bindsym Return exec pactl set-sink-mute 0 0
-		bindsym BackSpace exec pactl set-sink-mute 0 1
+		# bindsym j exec pactl set-sink-volume 0 -5%
+		# bindsym k exec pactl set-sink-volume 0 +5%
+		# bindsym Return exec pactl set-sink-mute 0 0
+		# bindsym BackSpace exec pactl set-sink-mute 0 1
+		bindsym j exec amixer -D pulse sset Master 5%-
+		bindsym k exec amixer -D pulse sset Master 5%+
+                bindsym Return exec amixer -D pulse sset Master mute
+		bindsym BackSpace exec amixer -D pulse sset Master unmute
 
         # back to normal
         bindsym q mode "default"
