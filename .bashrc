@@ -210,8 +210,8 @@ else
   alias netsh='wincmd netsh'
 fi
 
-if [[ $(ps -e| grep i3 | grep -v grep |wc -l) -eq 0 ]] ;then
-	/mnt/c/Program\ Files/VcXsrv/vcxsrv.exe -ac &
-	i3 &
-fi
+# if [[ $(ps -e| grep i3 | grep -v grep |wc -l) -eq 0 ]] ;then
+# 	/mnt/c/Program\ Files/VcXsrv/vcxsrv.exe -ac &
+# 	i3 &
+# fi
 
