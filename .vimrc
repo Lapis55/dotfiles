@@ -228,6 +228,7 @@ let g:Tex_AutoFolding = 0
 ""
 "" easymotion
 ""
+""default leader \
 "map <Leader> <Plug>(easymotion-prefix)
 let g:EasyMotion_do_mapping = 0 "disable default mapping
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
