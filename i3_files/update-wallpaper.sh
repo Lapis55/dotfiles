@@ -4,7 +4,7 @@
 # fi
 
 interval=5m # update interval
-imgPath=~/Dropbox/backdrops/ # backdrops directory
+imgPath=~/Pictures/ # backdrops directory
 imgs=(`find $imgPath -type f -regextype sed -regex ".*\.\(png\|jpg\|jpeg\)"`)
 len=${#imgs[@]}
 

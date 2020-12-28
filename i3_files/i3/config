@@ -245,5 +245,5 @@ exec --no-startup-id google-drive-ocamlfuse ~/GoogleDrive
 #exec --no-startup-id ibus-daemon -r -d -x
 exec --no-startup-id fcitx
 # # cyclic backdrops
-# exec_always ~/dotfiles/i3_files/update-wallpaper.sh
+exec_always ~/dotfiles/i3_files/update-wallpaper.sh
 

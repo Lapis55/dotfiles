@@ -135,12 +135,12 @@ alias cd="cdls"
 
 # some more aliases
 # apt
-alias install='sudo apt-get install'
-alias reinstall='sudo apt-get install --reinstall'
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
-alias dupgrade='sudo apt-get dist-upgrade'
-alias autoremove='sudo apt-get autoremove'
+alias install='sudo apt install'
+alias reinstall='sudo apt install --reinstall'
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
+alias dupgrade='sudo apt dist-upgrade'
+alias autoremove='sudo apt autoremove'
 # figure
 alias eps2pdf='for fig in *.eps; do magick -density 300 $fig ${fig%.*}.pdf ; done'
 # git

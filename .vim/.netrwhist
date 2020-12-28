@@ -1,4 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/obsidian/Downloads/Visual_feedback_systems/vfc_image_proc/cfg'
-let g:netrw_dirhist_2='/home/obsidian/catkin_ws/src/passivity_short/launch'
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/selenite/dotfiles/i3_files/i3'
