@@ -1299,6 +1299,7 @@ vimproc-install	vimproc.txt	/*vimproc-install*
 vimproc-interface	vimproc.txt	/*vimproc-interface*
 vimproc-introduction	vimproc.txt	/*vimproc-introduction*
 vimproc-linux	vimproc.txt	/*vimproc-linux*
+vimproc-macos	vimproc.txt	/*vimproc-macos*
 vimproc-macosx	vimproc.txt	/*vimproc-macosx*
 vimproc-multiarch	vimproc.txt	/*vimproc-multiarch*
 vimproc-objects	vimproc.txt	/*vimproc-objects*

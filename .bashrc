@@ -131,17 +131,17 @@ alias la='ls -A'
 
 # some more aliases
 # apt
-alias install='sudo apt-get install'
-alias reinstall='sudo apt-get install --reinstall'
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
-alias dupgrade='sudo apt-get dist-upgrade'
-alias autoremove='sudo apt-get autoremove'
+alias install='sudo apt install'
+alias reinstall='sudo apt install --reinstall'
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
+alias dupgrade='sudo apt dist-upgrade'
+alias autoremove='sudo apt autoremove'
 # figure
 alias eps2pdf='for fig in *.eps; do magick -density 300 $fig ${fig%.*}.pdf ; done'
 # git
 alias ga='git add '
-alias gaa='git add *'
+alias gaa='git add .'
 alias gcm='git commit -m '
 alias gstt='git status'
 alias gss='git stash save'
@@ -161,16 +161,7 @@ PS1='\[\e[1;36m\]\h\[\e[00m\]:\[\e[1;35m\]\W\[\e[1;33m\] $(get_branch)\[\e[1;33m
 
 
 if [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-# aliases for unix
-  source /opt/ros/kinetic/setup.bash
-  source ~/catkin_ws/devel/setup.bash
-
-  #export ROS_HOSTNAME=192.168.123.15
-  #export ROS_MASTER_URI=http://${ROS_HOSTNAME}:11311
-
-  alias cw='cd ~/catkin_ws'
-  alias cs='cd ~/catkin_ws/src'
-  alias cm='cd ~/catkin_ws && catkin_make'
+  echo "You are in Linux"
 else
 # aliases for MSYS2 and git bash
   export PATH=$PATH:mingw64/bin

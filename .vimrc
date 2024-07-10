@@ -41,8 +41,8 @@ NeoBundle 'Shougo/vimproc', {
 \     'windows' : 'tools\\update-dll-mingw',
 \     'cygwin' : 'make -f make_cygwin.mak',
 \     'mac' : 'make',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
+\     'linux' : 'make -f make_linux.mak',
+\     'unix' : 'make -f make_unix.mak',
 \    },
 \ }
 
