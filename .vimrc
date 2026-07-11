@@ -225,7 +225,9 @@ map <Leader>k <Plug>(easymotion-k)
 "" neo snippet
 ""
 " use NeoComplCache
-let g:neocomplcache_enable_at_startup = 1
+" Disable startup initialization; the old neocomplcache plugin currently
+" breaks during CursorHold lazy init on newer Vim builds.
+let g:neocomplcache_enable_at_startup = 0
 " ignore (A,a) until parent char input
 let g:neocomplcache_enable_smart_case = 1
 " enable '_' completion
