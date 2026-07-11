@@ -149,6 +149,8 @@ alias gpuo='git push -u origin '
 alias gpl='git pull'
 # Drive
 alias ggldrv='fusermount -u ~/GoogleDrive; google-drive-ocamlfuse ~/GoogleDrive'
+# devai
+alias dlc='devai launch codex'
 
 # add branch name
 # list -> delete name begin with non-'*' -> replace '* branch' to '(branch)'
