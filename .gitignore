@@ -1,2 +1,6 @@
-.vim/bundle/
+vim/.vim/autoload/plug.vim
+vim/.vim/backup/
+vim/.vim/plugged/
+vim/.vim/swap/
+vim/.vim/undo/
 .un~
