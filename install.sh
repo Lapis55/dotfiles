@@ -2,7 +2,7 @@
 set -euo pipefail
 
 DOTFILES_DIR="$HOME/dotfiles"
-DEFAULT_PACKAGES="bash vim mintty"
+DEFAULT_PACKAGES="bash vim mintty codex"
 DRY_RUN=0
 
 usage() {
@@ -13,6 +13,7 @@ Packages:
   bash
   vim
   mintty
+  codex
 USAGE
 }
 
@@ -34,6 +35,20 @@ package_targets() {
     bash) printf '%s\n' ".bashrc" ;;
     vim) printf '%s\n' ".vimrc" ".vim" ;;
     mintty) printf '%s\n' ".minttyrc" ;;
+    codex) printf '%s\n' ".codex/AGENTS.md" ;;
+    *) die "unknown package: $1" ;;
+  esac
+}
+
+package_links() {
+  case "$1" in
+    bash) printf '%s\t%s\n' ".bashrc" ".bashrc" ;;
+    vim)
+      printf '%s\t%s\n' ".vimrc" ".vimrc"
+      printf '%s\t%s\n' ".vim" ".vim"
+      ;;
+    mintty) printf '%s\t%s\n' ".minttyrc" ".minttyrc" ;;
+    codex) printf '%s\t%s\n' "AGENTS.md" ".codex/AGENTS.md" ;;
     *) die "unknown package: $1" ;;
   esac
 }
@@ -50,17 +65,17 @@ is_correct_link() {
 backup_conflicts() {
   local package="$1"
   local backup_root="$2"
-  local rel target expected backup_path
+  local source_rel target_rel target expected backup_path
 
-  while IFS= read -r rel; do
-    target="$HOME/$rel"
-    expected="$DOTFILES_DIR/$package/$rel"
+  while IFS=$'\t' read -r source_rel target_rel; do
+    target="$HOME/$target_rel"
+    expected="$DOTFILES_DIR/$package/$source_rel"
 
     if [ -e "$target" ] || [ -L "$target" ]; then
       if is_correct_link "$target" "$expected"; then
         log "ok: $target already links to $expected"
       else
-        backup_path="$backup_root/$rel"
+        backup_path="$backup_root/$target_rel"
         if [ "$DRY_RUN" -eq 1 ]; then
           log "would backup: $target -> $backup_path"
         else
@@ -70,12 +85,37 @@ backup_conflicts() {
         fi
       fi
     fi
-  done < <(package_targets "$package")
+  done < <(package_links "$package")
+}
+
+link_package() {
+  local package="$1"
+  local source_rel target_rel source target
+
+  while IFS=$'\t' read -r source_rel target_rel; do
+    source="$DOTFILES_DIR/$package/$source_rel"
+    target="$HOME/$target_rel"
+
+    [ -e "$source" ] || die "source path not found: $source"
+
+    if is_correct_link "$target" "$source"; then
+      continue
+    fi
+
+    if [ "$DRY_RUN" -eq 1 ]; then
+      log "would link: $target -> $source"
+    else
+      mkdir -p "$(dirname "$target")"
+      ln -s -- "$source" "$target"
+      log "link: $target -> $source"
+    fi
+  done < <(package_links "$package")
 }
 
 main() {
   local packages=()
-  local package timestamp backup_root stow_flags
+  local stow_packages=()
+  local package timestamp backup_root stow_flags needs_stow
 
   while [ "$#" -gt 0 ]; do
     case "$1" in
@@ -98,8 +138,17 @@ main() {
     packages=($DEFAULT_PACKAGES)
   fi
 
+  needs_stow=0
+  for package in "${packages[@]}"; do
+    if [ "$package" != "codex" ]; then
+      needs_stow=1
+    fi
+  done
+
   [ -d "$DOTFILES_DIR" ] || die "$DOTFILES_DIR does not exist"
-  need_command stow
+  if [ "$needs_stow" -eq 1 ]; then
+    need_command stow
+  fi
   need_command realpath
 
   if [ "$DRY_RUN" -eq 0 ]; then
@@ -116,15 +165,24 @@ main() {
     [ -d "$DOTFILES_DIR/$package" ] || die "package directory not found: $package"
     package_targets "$package" >/dev/null
     backup_conflicts "$package" "$backup_root"
+    if [ "$package" = "codex" ]; then
+      link_package "$package"
+    else
+      stow_packages+=("$package")
+    fi
   done
+
+  if [ "${#stow_packages[@]}" -eq 0 ]; then
+    return
+  fi
 
   stow_flags="-v"
   if [ "$DRY_RUN" -eq 1 ]; then
     stow_flags="-nv"
   fi
 
-  log "stow packages: ${packages[*]}"
-  stow $stow_flags -d "$DOTFILES_DIR" -t "$HOME" "${packages[@]}"
+  log "stow packages: ${stow_packages[*]}"
+  stow $stow_flags -d "$DOTFILES_DIR" -t "$HOME" "${stow_packages[@]}"
 }
 
 main "$@"

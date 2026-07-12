@@ -7,7 +7,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 $DotfilesDir = Join-Path $HOME "dotfiles"
-$DefaultPackages = @("bash", "vim", "mintty")
+$DefaultPackages = @("bash", "vim", "mintty", "codex")
 
 function Show-Usage {
     @"
@@ -17,6 +17,7 @@ Packages:
   bash
   vim
   mintty
+  codex
 "@ | Write-Output
 }
 
@@ -38,6 +39,11 @@ function Get-PackageTargets {
         "mintty" {
             @(
                 [pscustomobject]@{ RelativePath = ".minttyrc"; Type = "File" }
+            )
+        }
+        "codex" {
+            @(
+                [pscustomobject]@{ SourceRelativePath = "AGENTS.md"; TargetRelativePath = ".codex\AGENTS.md"; Type = "File" }
             )
         }
         default {
@@ -175,9 +181,12 @@ function Install-Package {
     }
 
     foreach ($entry in Get-PackageTargets $Name) {
-        $sourcePath = Join-Path $packageDir $entry.RelativePath
-        $targetPath = Join-Path $HOME $entry.RelativePath
-        $backupPath = Join-Path $BackupRoot $entry.RelativePath
+        $sourceRelativePath = if ($entry.PSObject.Properties.Name -contains "SourceRelativePath") { $entry.SourceRelativePath } else { $entry.RelativePath }
+        $targetRelativePath = if ($entry.PSObject.Properties.Name -contains "TargetRelativePath") { $entry.TargetRelativePath } else { $entry.RelativePath }
+
+        $sourcePath = Join-Path $packageDir $sourceRelativePath
+        $targetPath = Join-Path $HOME $targetRelativePath
+        $backupPath = Join-Path $BackupRoot $targetRelativePath
 
         if (-not (Test-Path -LiteralPath $sourcePath)) {
             throw "Source path not found: $sourcePath"

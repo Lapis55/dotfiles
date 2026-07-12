@@ -2,11 +2,12 @@
 
 個人用 dotfiles。配置場所は `~/dotfiles` 固定。
 
-管理対象は次の 3 パッケージ。
+管理対象は次の 4 パッケージ。
 
 - `bash`: `.bashrc`
 - `vim`: `.vimrc`, `.vim/`
 - `mintty`: `.minttyrc`
+- `codex`: `.codex/AGENTS.md`
 
 Windows では PowerShell、Linux / WSL では GNU Stow を使う。既存ファイルは展開スクリプトが削除せずに
 `~/.dotfiles-backup/YYYYmmdd-HHMMSS/` へ退避する。
@@ -26,7 +27,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 
 PowerShell の symbolic link 作成には、Windows Developer Mode または管理者権限が
 必要な場合がある。`.vim` ディレクトリは junction にフォールバックするが、
-`.bashrc` などのファイルリンク作成に失敗した場合は Developer Mode を有効化するか、
+`.bashrc` や `.codex/AGENTS.md` などのファイルリンク作成に失敗した場合は Developer Mode を有効化するか、
 管理者 PowerShell で再実行する。
 
 ### Linux / WSL
@@ -79,6 +80,9 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1 -DryRun
 # Windows: Vim だけ展開
 powershell -ExecutionPolicy Bypass -File .\install.ps1 vim
 
+# Windows: Codex のグローバル AGENTS.md だけ展開
+powershell -ExecutionPolicy Bypass -File .\install.ps1 codex
+
 # Linux / WSL: 全部を展開
 bash install.sh
 
@@ -87,6 +91,9 @@ bash install.sh --dry-run
 
 # Linux / WSL: Vim だけ展開
 bash install.sh vim
+
+# Linux / WSL: Codex のグローバル AGENTS.md だけ展開
+bash install.sh codex
 
 # Stow の状態を直接確認
 stow -nv -d ~/dotfiles -t ~ bash vim mintty
